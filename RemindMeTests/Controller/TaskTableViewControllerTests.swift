@@ -10,7 +10,7 @@ import XCTest
 @testable import RemindMe
 
 class TaskTableViewControllerTests: XCTestCase {
-
+    // MARK: Properties
     var sut: TaskTableViewController!
     
     override func setUp() {
