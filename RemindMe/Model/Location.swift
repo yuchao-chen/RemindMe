@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-class Location: Equatable {
+struct Location: Equatable {
     // MARK: Properties
     let coordinate: CLLocationCoordinate2D
     // MARK: Initialization

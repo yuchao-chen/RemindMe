@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Task: Equatable {
+struct Task: Equatable {
     // MARK: Properties
     let title: String
     let description: String?

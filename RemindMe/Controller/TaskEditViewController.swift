@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TaskListViewController: UIViewController {
+class TaskEditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
