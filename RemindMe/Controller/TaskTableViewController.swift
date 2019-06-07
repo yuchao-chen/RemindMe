@@ -11,7 +11,7 @@ import UIKit
 class TaskTableViewController: UITableViewController {
 
     // MARK: Properties
-    //@IBOutlet var taskView: UITableView!
+    @IBOutlet var taskTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

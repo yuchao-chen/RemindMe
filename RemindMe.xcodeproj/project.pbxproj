@@ -19,6 +19,8 @@
 		105E055422AA16330055145A /* LocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E055322AA16330055145A /* LocationTests.swift */; };
 		105E055622AA1D7B0055145A /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E055522AA1D7B0055145A /* TaskTableViewController.swift */; };
 		105E055822AA1EA20055145A /* TaskTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E055722AA1EA20055145A /* TaskTableViewControllerTests.swift */; };
+		105E055B22AA2DD00055145A /* BriefTaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E055A22AA2DD00055145A /* BriefTaskTableViewCell.swift */; };
+		105E055D22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E055C22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		105E055322AA16330055145A /* LocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTests.swift; sourceTree = "<group>"; };
 		105E055522AA1D7B0055145A /* TaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
 		105E055722AA1EA20055145A /* TaskTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewControllerTests.swift; sourceTree = "<group>"; };
+		105E055A22AA2DD00055145A /* BriefTaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefTaskTableViewCell.swift; sourceTree = "<group>"; };
+		105E055C22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefTaskTableViewCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			children = (
 				105E052B22A9EDDF0055145A /* TaskEditViewController.swift */,
 				105E055522AA1D7B0055145A /* TaskTableViewController.swift */,
+				105E055A22AA2DD00055145A /* BriefTaskTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				105E055722AA1EA20055145A /* TaskTableViewControllerTests.swift */,
+				105E055C22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -259,6 +265,7 @@
 				105E054E22A9F09A0055145A /* Task.swift in Sources */,
 				105E052C22A9EDDF0055145A /* TaskEditViewController.swift in Sources */,
 				105E055222A9F4F10055145A /* Location.swift in Sources */,
+				105E055B22AA2DD00055145A /* BriefTaskTableViewCell.swift in Sources */,
 				105E052822A9EDDF0055145A /* AppDelegate.swift in Sources */,
 				105E052A22A9EDDF0055145A /* SceneDelegate.swift in Sources */,
 			);
@@ -271,6 +278,7 @@
 				105E055422AA16330055145A /* LocationTests.swift in Sources */,
 				105E055822AA1EA20055145A /* TaskTableViewControllerTests.swift in Sources */,
 				105E053F22A9EDE10055145A /* RemindMeTests.swift in Sources */,
+				105E055D22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

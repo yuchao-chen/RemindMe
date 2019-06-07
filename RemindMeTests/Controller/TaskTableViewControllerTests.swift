@@ -15,7 +15,6 @@ class TaskTableViewControllerTests: XCTestCase {
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "TaskTableViewController")
         
@@ -28,6 +27,6 @@ class TaskTableViewControllerTests: XCTestCase {
     }
 
     func testTableViewCreated() {
-        XCTAssertNotNil(sut.tableView)
+        XCTAssertNotNil(sut.taskTableView)
     }
 }
