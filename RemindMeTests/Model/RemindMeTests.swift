@@ -19,16 +19,15 @@ class RemindMeTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testInitTaskTitle() {
+        let task = Task(title: "Foo")
+        XCTAssertEqual(task.title, "Foo", "task title should not be nill")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testInitTaskTimestamp() {
+        let timestamp = NSDate().timeIntervalSince1970
+        let task = Task(title: "Foo")
+        //let t = NSDate(timeIntervalSince1970: TimeInterval(task.timestamp ?? 0))
+        XCTAssertTrue(abs(task.timestamp - timestamp) < 0.1)
     }
-
 }
