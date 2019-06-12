@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
-class TaskEditViewController: UIViewController {
+class TaskDetailsViewController: UIViewController {
 
+    // MARK: Properties
+    @IBOutlet weak var taskTitleLabel: UILabel!
+    @IBOutlet weak var locationMap: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

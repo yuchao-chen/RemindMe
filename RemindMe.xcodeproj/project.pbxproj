@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		105E052822A9EDDF0055145A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E052722A9EDDF0055145A /* AppDelegate.swift */; };
 		105E052A22A9EDDF0055145A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E052922A9EDDF0055145A /* SceneDelegate.swift */; };
-		105E052C22A9EDDF0055145A /* TaskEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E052B22A9EDDF0055145A /* TaskEditViewController.swift */; };
+		105E052C22A9EDDF0055145A /* TaskDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E052B22A9EDDF0055145A /* TaskDetailsViewController.swift */; };
 		105E052F22A9EDDF0055145A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105E052D22A9EDDF0055145A /* Main.storyboard */; };
 		105E053122A9EDE10055145A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 105E053022A9EDE10055145A /* Assets.xcassets */; };
 		105E053422A9EDE10055145A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 105E053222A9EDE10055145A /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		105E052422A9EDDF0055145A /* RemindMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		105E052722A9EDDF0055145A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		105E052922A9EDDF0055145A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		105E052B22A9EDDF0055145A /* TaskEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditViewController.swift; sourceTree = "<group>"; };
+		105E052B22A9EDDF0055145A /* TaskDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailsViewController.swift; sourceTree = "<group>"; };
 		105E052E22A9EDDF0055145A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		105E053022A9EDE10055145A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		105E053322A9EDE10055145A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		105E054922A9EEE60055145A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				105E052B22A9EDDF0055145A /* TaskEditViewController.swift */,
+				105E052B22A9EDDF0055145A /* TaskDetailsViewController.swift */,
 				105E055522AA1D7B0055145A /* TaskTableViewController.swift */,
 				105E055A22AA2DD00055145A /* BriefTaskTableViewCell.swift */,
 			);
@@ -270,7 +270,7 @@
 				105E055622AA1D7B0055145A /* TaskTableViewController.swift in Sources */,
 				105E054E22A9F09A0055145A /* Task.swift in Sources */,
 				105E055F22AA39D80055145A /* TaskManager.swift in Sources */,
-				105E052C22A9EDDF0055145A /* TaskEditViewController.swift in Sources */,
+				105E052C22A9EDDF0055145A /* TaskDetailsViewController.swift in Sources */,
 				105E055222A9F4F10055145A /* Location.swift in Sources */,
 				105E055B22AA2DD00055145A /* BriefTaskTableViewCell.swift in Sources */,
 				105E052822A9EDDF0055145A /* AppDelegate.swift in Sources */,
