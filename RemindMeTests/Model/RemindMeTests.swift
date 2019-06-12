@@ -39,8 +39,8 @@ class RemindMeTests: XCTestCase {
     }
     
     func testCompareTaskEqual() {
-        let t0 = Task(title: "Foo")
-        let t1 = Task(title: "Foo")
+        let t0 = Task(title: "Foo", timestamp: 0.1)
+        let t1 = Task(title: "Foo", timestamp: 0.1)
         XCTAssertEqual(t0, t1)
     }
 }

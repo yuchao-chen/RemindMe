@@ -20,7 +20,7 @@ class LocationTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testCreateLocation() {
+    func testCreateLocationWithCoreLocation() {
         let lat = 100.0
         let lon = 200.0
         let alt = 10.0
@@ -31,7 +31,16 @@ class LocationTests: XCTestCase {
         XCTAssertEqual(location.coordinate.longitude, lon)
         XCTAssertEqual(location.altitude.distance(to: alt), 0)
     }
-    
+    func testCreateLocationWithNumber() {
+        let lat = 100.0
+        let lon = 200.0
+        let alt = 10.0
+
+        let location = Location(latitude: lat, longitude: lon, altitude: alt)
+        XCTAssertEqual(location.coordinate.latitude, lat)
+        XCTAssertEqual(location.coordinate.longitude, lon)
+        XCTAssertEqual(location.altitude.distance(to: alt), 0)
+    }
     func testLocationAreEqual() {
         let lat = 100.0
         let lon = 200.0

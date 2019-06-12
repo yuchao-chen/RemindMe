@@ -19,7 +19,7 @@ struct Task: Equatable {
         self.title = title
         self.description = description
         // if timestamp is not given, timestamp is automatically generated
-        self.timestamp = timestamp//NSDate().timeIntervalSince1970
+        self.timestamp = timestamp ?? NSDate().timeIntervalSince1970
         self.location = location
     }
     // MARK: Equatable

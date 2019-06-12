@@ -56,6 +56,7 @@
 		105E055C22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefTaskTableViewCellTests.swift; sourceTree = "<group>"; };
 		105E055E22AA39D80055145A /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		105E056022AA3A4D0055145A /* TaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerTests.swift; sourceTree = "<group>"; };
+		10AF65A1237BB68100310988 /* SampleLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SampleLocation.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +115,7 @@
 				105E055022A9F26E0055145A /* Model */,
 				105E055922AA1EAF0055145A /* Controller */,
 				105E054022A9EDE10055145A /* Info.plist */,
+				10AF65A2237BB68700310988 /* SampleData */,
 			);
 			path = RemindMeTests;
 			sourceTree = "<group>";
@@ -164,6 +166,14 @@
 				105E055C22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		10AF65A2237BB68700310988 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				10AF65A1237BB68100310988 /* SampleLocation.gpx */,
+			);
+			path = SampleData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

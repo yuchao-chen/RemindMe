@@ -14,10 +14,38 @@ class TaskDetailsViewController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var taskTitleLabel: UILabel!
     @IBOutlet weak var locationMap: MKMapView!
+    @IBOutlet weak var timestampLabel: UILabel!
+    
+    var task: Task?
+    
+    let RFC3339DateFormatter: DateFormatter = {
+      let formatter = DateFormatter()
+      formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+      return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if let task = task {
+            self.taskTitleLabel.text = task.title
+            if let timestamp = task.timestamp {
+                let date = Date(timeIntervalSince1970: timestamp)
+                self.timestampLabel.text = RFC3339DateFormatter.string(from: date)
+            }
+            
+            if let coordinate = task.location?.coordinate {
+                let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                self.locationMap.mapType = MKMapType.standard
+                self.locationMap.showsUserLocation = true
+                let pointAnnotation: MKPointAnnotation = MKPointAnnotation()
+                pointAnnotation.coordinate = coordinate
+                self.locationMap.addAnnotation(pointAnnotation)
+                self.locationMap.centerCoordinate = coordinate
+                self.locationMap.selectAnnotation(pointAnnotation, animated: true)
+                self.locationMap.region = region
+            }
+        }
     }
 
 

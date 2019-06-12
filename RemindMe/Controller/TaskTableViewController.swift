@@ -86,19 +86,36 @@ class TaskTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        switch (segue.identifier ?? "") {
+        case "ShowDetail":
+            guard let selectedController = segue.destination as? TaskDetailsViewController else {
+                fatalError("Unexpected segue destination: \(segue.destination)")
+            }
+            guard let selectedCell = sender as? BriefTaskTableViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            guard let indexPath = taskTableView.indexPath(for: selectedCell) else {
+                fatalError("The selected cell is not displayed: \(sender)")
+            }
+            selectedController.task = taskManager.task(at: indexPath.row)
+        default:
+            fatalError("Unexpected segue identifier: \(segue.identifier)")
+        }
     }
-    */
-
+    
     // MARK: Private Methods
     private func loadSampleTask() {
-        let task = Task(title: "Foo")
+        let location = Location(latitude: -37.891258, longitude: 145.174752, altitude: 1.0)
+        let task = Task(title: "Foo", location: location)
         taskManager.submitTask(task)
     }
 }
