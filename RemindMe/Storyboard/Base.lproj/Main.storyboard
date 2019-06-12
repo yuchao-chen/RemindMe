@@ -22,7 +22,19 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LNb-vb-rYQ" id="Nyv-TI-wBJ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiI-UG-IGW">
+                                            <rect key="frame" x="20" y="11" width="374" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="taskTitle" destination="WiI-UG-IGW" id="fYq-rs-bXw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -36,7 +48,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rha-h1-Dm2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-194" y="70"/>
+            <point key="canvasLocation" x="-194.20289855072465" y="69.642857142857139"/>
         </scene>
         <!--Task Edit View Controller-->
         <scene sceneID="tne-QT-ifu">

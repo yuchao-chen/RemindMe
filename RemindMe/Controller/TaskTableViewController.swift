@@ -12,6 +12,8 @@ class TaskTableViewController: UITableViewController {
 
     // MARK: Properties
     @IBOutlet var taskTableView: UITableView!
+    @IBOutlet weak var taskTitle: UILabel!
+    let taskManager = TaskManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,29 +23,33 @@ class TaskTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        loadSampleTask()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return taskManager.taskCount
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BriefTaskTableViewCell", for: indexPath) as? BriefTaskTableViewCell else {
+            fatalError("The dequeued cell is not an instance of BriefTaskTableViewCell.")
+        }
 
         // Configure the cell...
-
+        let task = taskManager.task(at: indexPath.row)
+        cell.taskTitle.text = task.title
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -90,4 +96,9 @@ class TaskTableViewController: UITableViewController {
     }
     */
 
+    // MARK: Private Methods
+    private func loadSampleTask() {
+        let task = Task(title: "Foo")
+        taskManager.submitTask(task)
+    }
 }

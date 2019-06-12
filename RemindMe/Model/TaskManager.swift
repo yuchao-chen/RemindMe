@@ -14,7 +14,7 @@ class TaskManager {
     private var compeltedTask: [Task] = []
     
     var taskCount: Int { return tasks.count }
-
+    
     func submitTask(_ t: Task) {
         tasks.append(t)
     }
@@ -22,4 +22,5 @@ class TaskManager {
     func task(at index: Int) -> Task {
         return tasks[index]
     }
+
 }
