@@ -115,6 +115,17 @@ class TaskTableViewController: UITableViewController {
         }
     }
     
+    // MARK: Actions
+    @IBAction func unwindToTaskTable(sender: UIStoryboardSegue) {
+        // if the TaskNewViewController unwind the segue, check whether a new task is done
+        if let source = sender.source as? TaskNewViewController, let task = source.task {
+            // add a new task
+            let newIndexPath = IndexPath(row: taskManager.taskCount, section: 0)
+            self.taskManager.submitTask(task)
+            self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
+    }
+    
     // MARK: Private Methods
     private func loadSampleTask() {
         let l0 = Location(latitude: -37.891258, longitude: 145.174752, altitude: 1.0)
