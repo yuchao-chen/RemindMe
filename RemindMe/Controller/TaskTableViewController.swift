@@ -97,6 +97,7 @@ class TaskTableViewController: UITableViewController {
         
         switch (segue.identifier ?? "") {
         case "ShowDetail":
+            // show the details of the selected task in a new page
             guard let selectedController = segue.destination as? TaskDetailsViewController else {
                 fatalError("Unexpected segue destination: \(segue.destination)")
             }
@@ -107,6 +108,8 @@ class TaskTableViewController: UITableViewController {
                 fatalError("The selected cell is not displayed: \(sender)")
             }
             selectedController.task = taskManager.task(at: indexPath.row)
+        case "NewTask":
+            print("")
         default:
             fatalError("Unexpected segue identifier: \(segue.identifier)")
         }
