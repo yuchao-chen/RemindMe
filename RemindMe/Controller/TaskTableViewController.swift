@@ -114,8 +114,11 @@ class TaskTableViewController: UITableViewController {
     
     // MARK: Private Methods
     private func loadSampleTask() {
-        let location = Location(latitude: -37.891258, longitude: 145.174752, altitude: 1.0)
-        let task = Task(title: "Foo", location: location)
-        taskManager.submitTask(task)
+        let l0 = Location(latitude: -37.891258, longitude: 145.174752, altitude: 1.0)
+        let t0 = Task(title: "Foo", location: l0)
+        taskManager.submitTask(t0)
+        let l1 = Location(latitude: -39.891258, longitude: 143.174752, altitude: 1.0)
+        let t1 = Task(title: "Bar", location: l1)
+        taskManager.submitTask(t1)
     }
 }

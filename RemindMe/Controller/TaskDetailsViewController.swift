@@ -12,6 +12,8 @@ import MapKit
 class TaskDetailsViewController: UIViewController {
 
     // MARK: Properties
+    private let locationManager = LocationManager.instance
+
     @IBOutlet weak var taskTitleLabel: UILabel!
     @IBOutlet weak var locationMap: MKMapView!
     @IBOutlet weak var timestampLabel: UILabel!
@@ -27,6 +29,11 @@ class TaskDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        loadTask()
+    }
+
+    // MARK: Private Mehthods
+    private func loadTask() {
         if let task = task {
             self.taskTitleLabel.text = task.title
             if let timestamp = task.timestamp {
@@ -47,7 +54,5 @@ class TaskDetailsViewController: UIViewController {
             }
         }
     }
-
-
 }
 

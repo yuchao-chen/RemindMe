@@ -23,6 +23,7 @@
 		105E055D22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E055C22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift */; };
 		105E055F22AA39D80055145A /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E055E22AA39D80055145A /* TaskManager.swift */; };
 		105E056122AA3A4D0055145A /* TaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105E056022AA3A4D0055145A /* TaskManagerTests.swift */; };
+		10A3FFD922B1C95200CC8626 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A3FFD822B1C95200CC8626 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		105E055C22AA2F6F0055145A /* BriefTaskTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefTaskTableViewCellTests.swift; sourceTree = "<group>"; };
 		105E055E22AA39D80055145A /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
 		105E056022AA3A4D0055145A /* TaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerTests.swift; sourceTree = "<group>"; };
+		10A3FFD822B1C95200CC8626 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		10AF65A1237BB68100310988 /* SampleLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SampleLocation.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				105E054D22A9F09A0055145A /* Task.swift */,
 				105E055122A9F4F10055145A /* Location.swift */,
 				105E055E22AA39D80055145A /* TaskManager.swift */,
+				10A3FFD822B1C95200CC8626 /* LocationManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				105E055B22AA2DD00055145A /* BriefTaskTableViewCell.swift in Sources */,
 				105E052822A9EDDF0055145A /* AppDelegate.swift in Sources */,
 				105E052A22A9EDDF0055145A /* SceneDelegate.swift in Sources */,
+				10A3FFD922B1C95200CC8626 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
