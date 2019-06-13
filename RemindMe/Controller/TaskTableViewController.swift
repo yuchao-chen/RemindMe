@@ -23,7 +23,9 @@ class TaskTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        loadSampleTask()
+//        loadSampleTask()
+        // load any saved tasks
+
     }
 
     // MARK: - Table view data source
@@ -123,16 +125,18 @@ class TaskTableViewController: UITableViewController {
             let newIndexPath = IndexPath(row: taskManager.taskCount, section: 0)
             self.taskManager.submitTask(task)
             self.tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+            taskManager.save()
         }
     }
     
     // MARK: Private Methods
-    private func loadSampleTask() {
-        let l0 = Location(latitude: -37.891258, longitude: 145.174752, altitude: 1.0)
-        let t0 = Task(title: "Foo", location: l0)
-        taskManager.submitTask(t0)
-        let l1 = Location(latitude: -39.891258, longitude: 143.174752, altitude: 1.0)
-        let t1 = Task(title: "Bar", location: l1)
-        taskManager.submitTask(t1)
-    }
+//    private func loadSampleTask() {
+//        let l0 = Location(latitude: -37.891258, longitude: 145.174752, altitude: 1.0)
+//        let t0 = Task(title: "Foo", location: l0)
+//        taskManager.submitTask(t0)
+//        let l1 = Location(latitude: -39.891258, longitude: 143.174752, altitude: 1.0)
+//        let t1 = Task(title: "Bar", location: l1)
+//        taskManager.submitTask(t1)
+//    }
 }

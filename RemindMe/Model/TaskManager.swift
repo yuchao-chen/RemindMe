@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os.log
 
 class TaskManager {
     // MARK: Properties
@@ -23,4 +24,18 @@ class TaskManager {
         return tasks[index]
     }
 
+    func save() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tasks, toFile: Task.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Tasks successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save tasks.", log: OSLog.default, type: .debug)
+        }
+    }
+    
+    func load() {
+        if let savedTasks = NSKeyedUnarchiver.unarchiveObject(withFile: Task.ArchiveURL.path) as? [Task] {
+            tasks += savedTasks
+        }
+    }
 }
