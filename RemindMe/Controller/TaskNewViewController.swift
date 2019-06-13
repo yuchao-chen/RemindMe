@@ -22,9 +22,11 @@ class TaskNewViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // handle the title input through custom delegate
+        titleTextField.delegate = self
+        // save button is enabled only if the input title is valid
+        updateSaveButtonState()
     }
-    
-
     
     // MARK: - Navigation
 
@@ -44,5 +46,21 @@ class TaskNewViewController: UIViewController {
         task = Task(title: title)
     }
     
+    // MARK: Private Methods
+    private func updateSaveButtonState() {
+        let title = titleTextField.text ?? ""
+        // disable the save button if the title is empty
+        saveButton.isEnabled = !title.isEmpty
+    }
+}
 
+extension TaskNewViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // Disable save button while editing
+        self.saveButton.isEnabled = false
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonState()
+        navigationItem.title = titleTextField.text
+    }
 }
