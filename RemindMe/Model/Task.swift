@@ -9,50 +9,63 @@
 import Foundation
 import os.log
 
-class Task: NSObject, NSCoding {
+struct Task: Equatable {
     // MARK: Properties
     var title: String
     var notes: String?
     var timestamp: Double?
     var location: Location?
     
-    // MARK: Archiving Paths
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("tasks")
-    
     // MARK: Types
     struct PropertyKey {
         static let title = "title"
-        static let notes = "description"
+        static let notes = "notes"
         static let timestamp = "timestamp"
+        static let altitude = "altitude"
+        static let latitude = "latitude"
+        static let longitude = "longitude"
     }
-    
+    var plist: [String: Any] {
+        var d = [String: Any]()
+        d[PropertyKey.title] = title
+        
+        d[PropertyKey.notes] = notes
+        d[PropertyKey.timestamp] = timestamp
+        
+        if let location = location {
+            d[PropertyKey.latitude] = location.coordinate.latitude
+            d[PropertyKey.longitude] = location.coordinate.longitude
+            d[PropertyKey.altitude] = location.altitude
+        }
+        return d
+    }
     // MARK: Initialization
-    init(title: String, description: String? = nil, timestamp: Double? = nil, location: Location? = nil) {
+    init(title: String, notes: String? = nil, timestamp: Double? = nil, location: Location? = nil) {
         self.title = title
-        self.notes = description
+        self.notes = notes
         // if timestamp is not given, timestamp is automatically generated
         self.timestamp = timestamp ?? NSDate().timeIntervalSince1970
         self.location = location
     }
     
-    // MARK: NSCoding
-    func encode(with coder: NSCoder) {
-        coder.encode(title, forKey: PropertyKey.title)
-        coder.encode(notes, forKey: PropertyKey.notes)
-        coder.encode(timestamp, forKey: PropertyKey.timestamp)
+    init?(dict: [String: Any]) {
+        guard let title = dict[PropertyKey.title] as? String else { return nil }
+        let notes = dict[PropertyKey.notes] as? String
+        let timestamp = dict[PropertyKey.timestamp] as? Double
+        let location: Location?
+        if let lat = dict[PropertyKey.latitude] as? Double,
+            let lon = dict[PropertyKey.longitude] as? Double,
+            let alt = dict[PropertyKey.altitude] as? Double {
+            location = Location(latitude: lat, longitude: lon, altitude: alt)
+        } else {
+            location = nil
+        }
+        self.title = title
+        self.notes = notes
+        self.timestamp = timestamp
+        self.location = location
     }
     
-    required convenience init?(coder: NSCoder) {
-        // the title is required
-        guard let title = coder.decodeObject(forKey: PropertyKey.title) as? String else {
-            os_log("Unable to decode the name for a Task object.", log: OSLog.default, type: .debug)
-            return nil
-        }
-        let description = coder.decodeObject(forKey: PropertyKey.notes) as? String
-        let timestamp = coder.decodeDouble(forKey: PropertyKey.timestamp)
-        self.init(title: title, description: description, timestamp: timestamp)
-    }
     
     // MARK: Equatable
     public static func == (l: Task, r: Task) -> Bool {
@@ -70,4 +83,5 @@ class Task: NSObject, NSCoding {
         }
         return true
     }
+ 
 }

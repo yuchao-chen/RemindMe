@@ -22,22 +22,24 @@ class TaskManagerTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    func testTaskCount() {
-        XCTAssertEqual(sut.taskCount, 0)
-//        let task = Task("Foo")
-//        sut.submitTask(task)
-//        XCTAssertEqual(sut.taskCount(), 1)
-    }
+//    func testTaskCount() {
+//        XCTAssertEqual(sut.taskCount, 0)
+////        let task = Task("Foo")
+////        sut.submitTask(task)
+////        XCTAssertEqual(sut.taskCount(), 1)
+//    }
     
     func testSubmitTask() {
+        let count = sut.taskCount
         let task = Task(title: "Foo")
         sut.submitTask(task)
-        XCTAssertEqual(sut.taskCount, 1)
+        XCTAssertEqual(sut.taskCount, count + 1)
     }
 
     func testReturnedTask() {
         let task = Task(title: "Foo")
         sut.submitTask(task)
-        XCTAssertEqual(sut.task(at: 0), task)
+        let count = sut.taskCount
+        XCTAssertEqual(sut.task(at: count - 1), task)
     }
 }

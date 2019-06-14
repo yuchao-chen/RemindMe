@@ -13,6 +13,7 @@ struct Location: Equatable {
     // MARK: Properties
     let coordinate: CLLocationCoordinate2D
     let altitude: CLLocationDistance
+    
     // MARK: Initialization
     init(coordinate: CLLocationCoordinate2D, altitude: CLLocationDistance) {
         self.coordinate = coordinate

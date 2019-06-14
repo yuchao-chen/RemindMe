@@ -120,7 +120,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCM-Ju-NIx">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Notes" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zCM-Ju-NIx">
                                 <rect key="frame" x="31" y="120" width="352" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -145,7 +145,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="l2h-AI-xBK"/>
                     <connections>
-                        <outlet property="descriptionTextField" destination="zCM-Ju-NIx" id="DwS-hk-fEV"/>
+                        <outlet property="notesTextField" destination="zCM-Ju-NIx" id="QmL-uj-VMX"/>
                         <outlet property="saveButton" destination="2Y6-oV-vMh" id="usd-cJ-oFO"/>
                         <outlet property="titleTextField" destination="33G-Gg-mTg" id="kg1-Lf-XK4"/>
                     </connections>

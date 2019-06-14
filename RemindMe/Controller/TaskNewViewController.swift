@@ -13,7 +13,7 @@ class TaskNewViewController: UIViewController {
 
     // MARK: Properties
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextField!
+    @IBOutlet weak var notesTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var task: Task?
